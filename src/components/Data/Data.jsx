@@ -19,10 +19,12 @@ const Data = ({ name }) => {
       .then((data) => {
         const countries = data.country;
         const highestProbabilityCountry = countries?.[0];
+        if (highestProbabilityCountry){
         setCountry(highestProbabilityCountry.country_id);
         setNationalityProbability(
-          `${(highestProbabilityCountry.probability * 100).toFixed(2)}%`
+          `${(highestProbabilityCountry.probability * 100).toFixed(2)}%` 
         );
+        }
       })
       .catch((error) => console.error(error));
 
