@@ -7,24 +7,11 @@ import List from "./components/List/List";
 
 function App() {
   const [name, setName] = useState("");
-  const [gender, setGender] = useState("");
-  const [nationalityProbability, setNationalityProbability] = useState("");
-  const [country, setCountry] = useState("");
-  const [age, setAge] = useState("");
+ // const [gender, setGender] = useState("");
+ // const [nationalityProbability, setNationalityProbability] = useState("");
+ // const [country, setCountry] = useState("");
+ // const [age, setAge] = useState("");
 
-  // ? Pruebita
-  const listData = name && gender && nationalityProbability && country && age
-    ? { name, gender, age, nationalityProbability, country }
-    : null;
-
-    // TODO  Aquí 
-  useEffect(() => {
-    if (listData) {
-      localStorage.setItem("data", JSON.stringify(listData));
-    }
-  }, [listData]);
-
-  console.log (listData)
 
   return (
     <>
@@ -38,7 +25,7 @@ function App() {
         <Data name={name} />
       </section>
       <section>
-        <List name={name} />
+        <List name={name}/>
       </section>
     </>
   );

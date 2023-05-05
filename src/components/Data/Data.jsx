@@ -6,6 +6,7 @@ const Data = ({ name }) => {
   const [country, setCountry] = useState("");
   const [age, setAge] = useState("");
 
+
   useEffect(() => {
     fetch(`https://api.genderize.io?name=${name}`)
       .then((response) => response.json())
@@ -35,6 +36,19 @@ const Data = ({ name }) => {
       })
       .catch((error) => console.error(error));
   }, [name]);
+
+// ?  variable para ListData
+  const listData = name && gender && nationalityProbability && country && age
+  ? { name, gender, age, nationalityProbability, country }
+  : null;
+
+  useEffect(() => {
+    if (listData) {
+      localStorage.setItem("listData", JSON.stringify(listData));
+    }
+  }, [listData]);
+
+  console.log (listData)
 
   return (
     <>

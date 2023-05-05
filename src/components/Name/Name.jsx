@@ -26,12 +26,15 @@ const Name = ({setName}) => {
       <>
       <form onSubmit={handleFormSubmit}>
             <label>
-              <h3>Ingrese el nombre</h3>
-              <input ref={inputRef} type="text" />
+              <h3>Ingrese un nombre</h3>
+              
             </label>
-            <br />
-            <button type="submit">Obtener datos mágicos</button>
+            <input ref={inputRef} type="text" />
+           
           </form>
+           
+          <button type="submit">Obtener datos mágicos</button> 
+        
           <div>
         <h2>O utilice nuestro</h2>
         <button onClick={handleButtonClick}>Rayo Randomizador</button>
