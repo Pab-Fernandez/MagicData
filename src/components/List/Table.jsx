@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 
+
 const Table = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("listData"));
     if (storedData) {
-      setData([storedData]);
+      setData(storedData);
     }
+    console.log (storedData)
   }, []);
 
   return (
     <table>
       <thead>
         <tr>
+        <th>Nº</th>
           <th>Nombre</th>
-          <th>Género</th>
+          <th>Sexo</th>
           <th>Edad</th>
           <th>Nacionalidad</th>
         </tr>
@@ -23,6 +26,7 @@ const Table = () => {
       <tbody>
         {data.map((item, index) => (
           <tr key={index}>
+             <td>{index + 1}</td>
             <td>{item.name}</td>
             <td>{item.gender}</td>
             <td>{item.age}</td>
