@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import Name from "./components/Name/Name";
 import Data from "./components/Data/Data";
 import List from "./components/List/List";
+import Table from "./components/List/table";
+
 
 function App() {
   const [name, setName] = useState("");
@@ -26,6 +28,7 @@ function App() {
       </section>
       <section>
         <List name={name}/>
+        <Table/>
       </section>
     </>
   );
