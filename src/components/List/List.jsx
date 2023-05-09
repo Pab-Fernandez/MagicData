@@ -1,4 +1,5 @@
-function List ({name}) {
+
+function List ({name, magicDataList}) {
     
     
 
@@ -7,6 +8,7 @@ function List ({name}) {
         {name && (
       <section>
         <h1>Lista de datos mágicos</h1>
+        
       </section>
 )}
         </>

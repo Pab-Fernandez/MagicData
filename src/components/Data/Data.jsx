@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 
-const Data = ({ name }) => {
+const Data = ({ name, setMagicDataList }) => {
   const [gender, setGender] = useState("");
   const [nationalityProbability, setNationalityProbability] = useState("");
   const [country, setCountry] = useState("");
   const [age, setAge] = useState("");
 
-
   useEffect(() => {
-    setGender("")
-    setAge("")
-    setCountry("")
-    setNationalityProbability("")
-    console.log(name)
+    setGender("");
+    setAge("");
+    setCountry("");
+    setNationalityProbability("");
+
     fetch(`https://api.genderize.io?name=${name}`)
       .then((response) => response.json())
       .then((data) => {
@@ -25,11 +24,11 @@ const Data = ({ name }) => {
       .then((data) => {
         const countries = data.country;
         const highestProbabilityCountry = countries?.[0];
-        if (highestProbabilityCountry){
-        setCountry(highestProbabilityCountry.country_id);
-        setNationalityProbability(
-          `${(highestProbabilityCountry.probability * 100).toFixed(2)}%` 
-        );
+        if (highestProbabilityCountry) {
+          setCountry(highestProbabilityCountry.country_id);
+          setNationalityProbability(
+            `${(highestProbabilityCountry.probability * 100).toFixed(2)}%`
+          );
         }
       })
       .catch((error) => console.error(error));
@@ -42,17 +41,26 @@ const Data = ({ name }) => {
       .catch((error) => console.error(error));
   }, [name]);
 
-
-
   useEffect(() => {
     if (country && nationalityProbability && age && gender) {
-      const listData = JSON.parse(localStorage.getItem ("listData")) ||  []
-      console.log (listData)
-      localStorage.setItem("listData", JSON.stringify([...listData, {
-        name,country,nationalityProbability,age,gender
-      }]));
+      const listData = JSON.parse(localStorage.getItem("listData")) || [];
+
+      localStorage.setItem(
+        "listData",
+        JSON.stringify([
+          ...listData,
+          {
+            name,
+            country,
+            nationalityProbability,
+            age,
+            gender,
+          },
+        ])
+      );
     }
-  }, [country, nationalityProbability,age,gender]);
+  }, [country, nationalityProbability, age, gender]);
+
 
   return (
     <>

@@ -9,6 +9,10 @@ import Table from "./components/List/table";
 
 function App() {
   const [name, setName] = useState("");
+  const [magicDataList, setMagicDataList] = useState ( 
+    localStorage.getItem("listData") ? 
+  JSON.parse(localStorage.getItem("listData" )) : [] )
+  
  // const [gender, setGender] = useState("");
  // const [nationalityProbability, setNationalityProbability] = useState("");
  // const [country, setCountry] = useState("");
@@ -24,11 +28,11 @@ function App() {
         <Name setName={setName} />
       </div>
       <section>
-        <Data name={name} />
+        <Data name={name} setMagicDataList={setMagicDataList} />
       </section>
       <section>
-        <List name={name}/>
-        <Table/>
+        <List name={name} magicDataList={magicDataList}/>  
+          <Table magicDataList={magicDataList}/>
       </section>
     </>
   );

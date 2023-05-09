@@ -30,10 +30,10 @@ const Name = ({setName}) => {
               
             </label>
             <input ref={inputRef} type="text" />
-           
+            <button type="submit">Obtener datos mágicos</button> 
           </form>
            
-          <button type="submit">Obtener datos mágicos</button> 
+          
         
           <div>
         <h2>O utilice nuestro</h2>
