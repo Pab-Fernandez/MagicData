@@ -48,7 +48,7 @@ const Data = ({ name, setMagicDataList }) => {
       localStorage.setItem(
         "listData",
         JSON.stringify([
-          ...listData,
+          
           {
             name,
             country,
@@ -56,11 +56,27 @@ const Data = ({ name, setMagicDataList }) => {
             age,
             gender,
           },
+          ...listData,
         ])
       );
+      const updatedListData = JSON.parse(localStorage.getItem("listData")) || [];
+      setMagicDataList([
+        ...updatedListData, 
+  //      {
+  //        name,
+  //        country,
+  //        nationalityProbability,
+  //        age,
+  //        gender,
+  //      },
+      ])
     }
   }, [country, nationalityProbability, age, gender]);
 
+//useEffect(() => {
+//setMagicDataList  
+//}, [listData]);
+//
 
   return (
     <>

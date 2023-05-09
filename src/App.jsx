@@ -12,11 +12,7 @@ function App() {
   const [magicDataList, setMagicDataList] = useState ( 
     localStorage.getItem("listData") ? 
   JSON.parse(localStorage.getItem("listData" )) : [] )
-  
- // const [gender, setGender] = useState("");
- // const [nationalityProbability, setNationalityProbability] = useState("");
- // const [country, setCountry] = useState("");
- // const [age, setAge] = useState("");
+
 
 
   return (

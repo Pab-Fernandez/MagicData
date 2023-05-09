@@ -37,7 +37,7 @@ const Name = ({setName}) => {
         
           <div>
         <h2>O utilice nuestro</h2>
-        <button onClick={handleButtonClick}>Rayo Randomizador</button>
+        <button className ="randombutton" onClick={handleButtonClick}>Rayo Randomizador</button>
       </div>
       </>
     )

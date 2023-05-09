@@ -56,3 +56,42 @@ th {
 td {
   padding: 10px;
 }
+
+.randombutton {
+    border: 2px solid currentColor;
+    border-radius: 3rem;
+    color: rgb(10, 38, 86);
+    font-family: roboto;
+    font-weight: 100;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    position: relative;
+    text-decoration: none;
+    transition: 0.2s transform ease-in-out;
+    will-change: transform;
+}
+.randombutton::after {
+    background-color: #ff0;
+    border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+  }
+  .randombutton:hover::after {
+    transform: translate(0, 0);
+  }
+randombutton:hover {
+    border: 2px solid transparent;
+    color: #1b1742;
+    transform: scale(1.05);
+    will-change: transform;
+  }

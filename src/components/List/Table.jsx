@@ -1,20 +1,12 @@
 import { useState, useEffect } from "react";
 
 
-const Table = () => {
-  const [data, setData] = useState([]);
+const Table = ({magicDataList}) => {
 
-  useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("listData"));
-    if (storedData) {
-      setData(storedData);
-    }
-    console.log (storedData)
-  }, []);
 
   return (
     <>
-   
+    {magicDataList && (
       <table>
         <thead>
           <tr>
@@ -26,7 +18,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {magicDataList.reverse().map((item, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{item.name}</td>
@@ -39,7 +31,7 @@ const Table = () => {
           ))}
         </tbody>
       </table>
- 
+    )}
   </>
 );
 };
