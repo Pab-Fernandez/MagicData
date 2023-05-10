@@ -6,7 +6,13 @@ const Table = ({magicDataList}) => {
 
   return (
     <>
-    {magicDataList && (
+     {magicDataList && (
+      <section>
+        <h1>Lista de datos mágicos</h1>
+        
+      </section>
+)}
+    {magicDataList  && (
       <table>
         <thead>
           <tr>
@@ -18,8 +24,9 @@ const Table = ({magicDataList}) => {
           </tr>
         </thead>
         <tbody>
-          {magicDataList.reverse().map((item, index) => (
-            <tr key={index}>
+
+          {magicDataList.map((item, index) => (
+              <tr key={index}>
               <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>{item.gender}</td>

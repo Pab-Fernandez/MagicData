@@ -62,7 +62,8 @@ Revisar Servicios.
 
 variables de entorno ()  
 
-*/Tarea/*
-Asignar un color distinto al nombre en la tabla
+*/A mejorar/*
+Asignar un color distinto al  primer nombre en la tabla 
 Si las API no responden que nos avise. 
-Deshabilitar el rayorenderizador asociado al input 
+Deshabilitar el rayorenderizador asociado al input ()done
+Estilos.  

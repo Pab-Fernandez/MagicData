@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Name from "./components/Name/Name";
 import Data from "./components/Data/Data";
-import List from "./components/List/List";
+//import List from "./components/List/List";
 import Table from "./components/List/table";
 
 
@@ -27,8 +27,8 @@ function App() {
         <Data name={name} setMagicDataList={setMagicDataList} />
       </section>
       <section>
-        <List name={name} magicDataList={magicDataList}/>  
-          <Table magicDataList={magicDataList}/>
+          <div><Table magicDataList={magicDataList} name={name}/>
+          </div>
       </section>
     </>
   );

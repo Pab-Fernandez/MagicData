@@ -12,16 +12,17 @@ const Name = ({setName}) => {
         });
     }
   
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      const inputText = inputRef.current.value.trim();
-  
-      if (inputText === "") {
-        handleButtonClick();
-      } else {
-        setName(inputText);
-      }
-    }
+   function handleFormSubmit(event) {
+     event.preventDefault();
+     const inputText = inputRef.current.value.trim();
+     setName (inputText);
+// 
+//     if (inputText === "") {
+//       handleButtonClick();
+//      }else
+//         {setName(inputText)
+//     }
+   }
     return (
       <>
       <form onSubmit={handleFormSubmit}>

@@ -1,5 +1,5 @@
 
-function List ({name, magicDataList}) {
+/*function List ({name, magicDataList}) {
     
     
 
@@ -16,4 +16,4 @@ function List ({name, magicDataList}) {
  
 }
 
-export default List;
+export default List;*/
